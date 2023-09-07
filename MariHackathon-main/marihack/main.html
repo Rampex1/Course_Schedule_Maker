@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+
+    <title>Schedule Calendar</title>
+</head>
+<body onload="init()">
+
+    <div class="dropdown" style="float:left">
+        <button onclick="toggleOpen()" class="dropbtn">W22 Courses</button>
+        <div id="myDropdown" class="dropdown-content">
+          <input type="text" placeholder="ex: 00001 101-LCU-05" id="myInput" onkeyup="filterFunction()">
+        </div>
+
+
+    <div class="container">
+
+
+        <h1 id="test">WINTER 2022</h1>
+        <h3 id="weekNumber">TIME</h3>    
+
+        <div class="schedule__container">
+            <div class="days__container">
+                <span class="corner"></span>
+                <div class="day">Sunday</div>
+                <div class="day">Monday</div>
+                <div class="day">Tuesday</div>
+                <div class="day">Wednesday</div>
+                <div class="day">Thursday</div>
+                <div class="day">Friday</div>
+                <div class="day">Saturday</div>
+            </div>
+            <div class="part__day">
+                <span class="time">8:15</span>
+                <div class="task" id="U0815" ></div>
+                <div class="task" id="M0815"></div>
+                <div class="task" id="T0815"></div>
+                <div class="task" id="W0815"></div>
+                <div class="task" id="H0815"></div>
+                <div class="task" id="F0815"></div>
+                <div class="task" id="S0815"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">8:45</span>
+                <div class="task" id="U0845" ></div>
+                <div class="task" id="M0845"></div>
+                <div class="task" id="T0845"></div>
+                <div class="task" id="W0845"></div>
+                <div class="task" id="H0845"></div>
+                <div class="task" id="F0845"></div>
+                <div class="task" id="S0845"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">9:15</span>
+                <div class="task" id="U0915"></div>
+                <div class="task" id="M0915"></div>
+                <div class="task" id="T0915"></div>
+                <div class="task" id="W0915"></div>
+                <div class="task" id="H0915"></div>
+                <div class="task" id="F0915"></div>
+                <div class="task" id="S0915"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">9:45</span>
+                <div class="task" id="U0945" ></div>
+                <div class="task" id="M0945"></div>
+                <div class="task" id="T0945"></div>
+                <div class="task" id="W0945"></div>
+                <div class="task" id="H0945"></div>
+                <div class="task" id="F0945"></div>
+                <div class="task" id="S0945"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">10:15</span>
+                <div class="task" id="U1015" ></div>
+                <div class="task" id="M1015"></div>
+                <div class="task" id="T1015"></div>
+                <div class="task" id="W1015"></div>
+                <div class="task" id="H1015"></div>
+                <div class="task" id="F1015"></div>
+                <div class="task" id="S1015"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">10:45</span>
+                <div class="task" id="U10455" ></div>
+                <div class="task" id="M10455"></div>
+                <div class="task" id="T10455"></div>
+                <div class="task" id="W10455"></div>
+                <div class="task" id="H10455"></div>
+                <div class="task" id="F10455"></div>
+                <div class="task" id="S10455"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">11:15</span>
+                <div class="task" id="U1115" ></div>
+                <div class="task" id="M1115"></div>
+                <div class="task" id="T1115"></div>
+                <div class="task" id="W1115"></div>
+                <div class="task" id="H1115"></div>
+                <div class="task" id="F1115"></div>
+                <div class="task" id="S1115"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">11:45</span>
+                <div class="task" id="U1145" ></div>
+                <div class="task" id="M1145"></div>
+                <div class="task" id="T1145"></div>
+                <div class="task" id="W1145"></div>
+                <div class="task" id="H1145"></div>
+                <div class="task" id="F1145"></div>
+                <div class="task" id="S1145"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">12:15</span>
+                <div class="task" id="U1215" ></div>
+                <div class="task" id="M1215"></div>
+                <div class="task" id="T1215"></div>
+                <div class="task" id="W1215"></div>
+                <div class="task" id="H1215"></div>
+                <div class="task" id="F1215"></div>
+                <div class="task" id="S1215"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">12:45</span>
+                <div class="task" id="U1245" ></div>
+                <div class="task" id="M1245"></div>
+                <div class="task" id="T1245"></div>
+                <div class="task" id="W1245"></div>
+                <div class="task" id="H1245"></div>
+                <div class="task" id="F1245"></div>
+                <div class="task" id="S1245"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">13:15</span>
+                <div class="task" id="U1315" ></div>
+                <div class="task" id="M1315"></div>
+                <div class="task" id="T1315"></div>
+                <div class="task" id="W1315"></div>
+                <div class="task" id="H1315"></div>
+                <div class="task" id="F1315"></div>
+                <div class="task" id="S1315"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">13:45</span>
+                <div class="task" id="U1345" ></div>
+                <div class="task" id="M1345"></div>
+                <div class="task" id="T1345"></div>
+                <div class="task" id="W1345"></div>
+                <div class="task" id="H1345"></div>
+                <div class="task" id="F1345"></div>
+                <div class="task" id="S1345"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">14:15</span>
+                <div class="task" id="U1415" ></div>
+                <div class="task" id="M1415"></div>
+                <div class="task" id="T1415"></div>
+                <div class="task" id="W1415"></div>
+                <div class="task" id="H1415"></div>
+                <div class="task" id="F1415"></div>
+                <div class="task" id="S1415"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">14:45</span>
+                <div class="task" id="U1445" ></div>
+                <div class="task" id="M1445"></div>
+                <div class="task" id="T1445"></div>
+                <div class="task" id="W1445"></div>
+                <div class="task" id="H1445"></div>
+                <div class="task" id="F1445"></div>
+                <div class="task" id="S1445"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">15:15</span>
+                <div class="task" id="U1515" ></div>
+                <div class="task" id="M1515"></div>
+                <div class="task" id="T1515"></div>
+                <div class="task" id="W1515"></div>
+                <div class="task" id="H1515"></div>
+                <div class="task" id="F1515"></div>
+                <div class="task" id="S1515"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">15:45</span>
+                <div class="task" id="U1545" ></div>
+                <div class="task" id="M1545"></div>
+                <div class="task" id="T1545"></div>
+                <div class="task" id="W1545"></div>
+                <div class="task" id="H1545"></div>
+                <div class="task" id="F1545"></div>
+                <div class="task" id="S1545"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">16:15</span>
+                <div class="task" id="U1615" ></div>
+                <div class="task" id="M1615"></div>
+                <div class="task" id="T1615"></div>
+                <div class="task" id="W1615"></div>
+                <div class="task" id="H1615"></div>
+                <div class="task" id="F1615"></div>
+                <div class="task" id="S1615"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">16:45</span>
+                <div class="task" id="U1645" ></div>
+                <div class="task" id="M1645"></div>
+                <div class="task" id="T1645"></div>
+                <div class="task" id="W1645"></div>
+                <div class="task" id="H1645"></div>
+                <div class="task" id="F1645"></div>
+                <div class="task" id="S1645"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">17:15</span>
+                <div class="task" id="U1715" ></div>
+                <div class="task" id="M1715"></div>
+                <div class="task" id="T1715"></div>
+                <div class="task" id="W1715"></div>
+                <div class="task" id="H1715"></div>
+                <div class="task" id="F1715"></div>
+                <div class="task" id="S1715"></div>
+            </div>
+            <div class="part__day">
+                <span class="time">17:45</span>
+                <div class="task" id="U1745" ></div>
+                <div class="task" id="M1745"></div>
+                <div class="task" id="T1745"></div>
+                <div class="task" id="W1745"></div>
+                <div class="task" id="H1745"></div>
+                <div class="task" id="F1745"></div>
+                <div class="task" id="S1745"></div>
+            </div>
+            <!-- 
+            <div class="part__day">
+                <span class="time">18:15</span>
+                <div class="task" id="U1745" ></div>
+                <div class="task" id="M1745"></div>
+                <div class="task" id="T1745"></div>
+                <div class="task" id="W1745"></div>
+                <div class="task" id="H1745"></div>
+                <div class="task" id="F1745"></div>
+                <div class="task" id="S1745"></div>
+            </div>
+             -->
+        </div>
+
+        
+
+        <button onClick="window.location.reload();" class="deleteBtn">Reset Schedule</button>
+    </div>
+
+    <script src="source.js"></script>
+</body>
+</html>
